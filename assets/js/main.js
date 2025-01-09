@@ -223,4 +223,126 @@ mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
+window.calculateZakat = function(state) {
+      const kadar = parseFloat(document.getElementById(`${state}-kadar`).value);
+      const tanggungan = parseInt(document.getElementById(`${state}-tanggungan`).value);
+      const result = kadar * tanggungan;
+
+      document.getElementById(`${state}-result`).innerText = `Jumlah Zakat: RM${result.toFixed(2)}`;
+  };
+
+  
+
+  document.querySelectorAll('.collapsible').forEach(button => {
+    button.addEventListener('click', function() {
+      this.classList.toggle('active');
+      const content = this.nextElementSibling;
+      content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    });
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const collapsibleSectionButton = document.querySelector('.collapsible-section');
+    const collapsibleContent = document.querySelector('.collapsible-content');
+  
+    collapsibleSectionButton.addEventListener('click', () => {
+      collapsibleContent.classList.toggle('active');
+      if (collapsibleContent.classList.contains('active')) {
+        collapsibleSectionButton.textContent = 'Zakat Fitrah';
+      } else {
+        collapsibleSectionButton.textContent = 'Zakat Fitrah';
+      }
+    });
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // Toggle Pendapatan Section
+    const pendapatanSectionButton = document.querySelector('.collapsible-pendapatan-section');
+    const pendapatanContent = document.querySelector('.pendapatan-collapsible-content');
+  
+    pendapatanSectionButton.addEventListener('click', () => {
+      pendapatanContent.classList.toggle('active');
+      pendapatanContent.style.display = pendapatanContent.classList.contains('active') ? 'block' : 'none';
+    });
+  
+    // Toggle Inner Collapsible for States
+    document.querySelectorAll('.collapsible-pendapatan').forEach(button => {
+      button.addEventListener('click', function () {
+        this.classList.toggle('active');
+        const content = this.nextElementSibling;
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+  
+    // Calculation for Zakat Pendapatan
+    window.calculatePendapatan = function (state) {
+      const gaji = parseFloat(document.getElementById(`${state}-pendapatan1`).value) || 0;
+      const bonus = parseFloat(document.getElementById(`${state}-pendapatan2`).value) || 0;
+      const lain = parseFloat(document.getElementById(`${state}-pendapatan3`).value) || 0;
+  
+      const pendapatanTahunan = gaji + bonus + lain;
+  
+      const perbelanjaanDiri = parseFloat(document.getElementById(`${state}-perbelanjaan1`).value) || 0;
+      const nafkahIsteri = parseFloat(document.getElementById(`${state}-perbelanjaan2`).value) || 0;
+      const anakRendah = parseFloat(document.getElementById(`${state}-perbelanjaan3`).value) * 1000 || 0;
+      const anakUniversiti = parseFloat(document.getElementById(`${state}-perbelanjaan4`).value) * 4000 || 0;
+  
+      const perbelanjaanTahunan = perbelanjaanDiri + nafkahIsteri + anakRendah + anakUniversiti;
+  
+      const pendapatanLayak = pendapatanTahunan - perbelanjaanTahunan;
+      const zakatTahunan = pendapatanLayak * 0.025;
+      const zakatBulanan = zakatTahunan / 12;
+  
+      document.getElementById(
+        `${state}-result-pendapatan`
+      ).innerHTML = `
+        <strong>Jumlah Pendapatan Bersih Layak Dizakat:</strong> RM${pendapatanLayak.toFixed(2)}<br>
+        <strong>Jumlah Zakat Setahun:</strong> RM${zakatTahunan.toFixed(2)}<br>
+        <strong>Jumlah Zakat Bulanan:</strong> RM${zakatBulanan.toFixed(2)}
+      `;
+    };
+  });
+
+// Function to calculate Zakat KWSP
+window.calculateKwsp = function (state) {
+  const kwspAmount = parseFloat(document.getElementById(`${state}-kwsp`).value) || 0; // Get the KWSP amount
+  const zakat = kwspAmount * 0.025; // Calculate Zakat (2.5%)
+
+  // Update the result display
+  document.getElementById(`${state}-result-kwsp`).innerHTML = `
+    <strong>Jumlah KWSP Dikeluarkan:</strong> RM${kwspAmount.toFixed(2)}<br>
+    <strong>Kiraan Zakat (2.5%):</strong> RM${zakat.toFixed(2)}<br>
+    <strong>Jumlah Zakat:</strong> <span style="color: green; font-weight: bold;">RM${zakat.toFixed(2)}</span>
+  `;
+};
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Toggle KWSP Section
+  const kwspSectionButton = document.querySelector('.collapsible-kwsp-section');
+  const kwspContent = document.querySelector('.kwsp-collapsible-content');
+
+  kwspSectionButton.addEventListener('click', () => {
+    kwspContent.classList.toggle('active');
+    kwspContent.style.display = kwspContent.classList.contains('active') ? 'block' : 'none';
+  });
+
+  // Toggle Inner Collapsible for States
+  document.querySelectorAll('.collapsible-kwsp').forEach(button => {
+    button.addEventListener('click', function() {
+      this.classList.toggle('active');
+      const content = this.nextElementSibling;
+      content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    });
+  });
+
+  // Add event listeners for the calculation buttons for each state
+  ['kelantan', 'pahang', 'terengganu'].forEach(state => {
+    const calcButton = document.querySelector(`#${state}-kwsp-button`);
+    if (calcButton) {
+      calcButton.addEventListener('click', () => calculateKwsp(state));
+    }
+  });
+});
+
 })();

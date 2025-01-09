@@ -25,6 +25,7 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Main CSS File -->
+  <link href="assets/css/calc.css" rel="stylesheet">
   <link href="assets/css/main.css" rel="stylesheet">
 
 </head>
@@ -103,107 +104,135 @@
       </nav>
     </div><!-- End Page Title -->
 
-    <!-- Portfolio Details Section -->
-
-    <section id="faq" class="faq section">
-
+    <section id="zakat-calculator" class="calculator-section">
       <div class="container">
+        <div class="calculator-header">
+          <button class="collapsible-section">Zakat Fitrah</button>
+        </div>
+        <div class="collapsible-content">
+          <!-- Kelantan -->
+          <button class="collapsible">Kelantan</button>
+          <div class="content">
+            <label for="kelantan-kadar">Kadar Zakat Fitrah:</label>
+            <select id="kelantan-kadar">
+              <option value="7">Beras Biasa (RM7)</option>
+              <option value="14">Beras Premium (RM14)</option>
+              <option value="21">Beras Super Premium (RM21)</option>
+            </select>
+            <label for="kelantan-tanggungan">Bilangan Tanggungan:</label>
+            <input type="number" id="kelantan-tanggungan" min="0" value="0">
+            <button onclick="calculateZakat('kelantan')">Kira</button>
+            <p id="kelantan-result"></p>
+          </div>
 
-        <div class="row gy-4">
+          <!-- Pahang -->
+          <button class="collapsible">Pahang</button>
+          <div class="content">
+            <label for="pahang-kadar">Kadar Zakat Fitrah:</label>
+            <select id="pahang-kadar">
+              <option value="7">Beras Biasa (RM7)</option>
+              <option value="14">Beras Premium (RM14)</option>
+              <option value="21">Beras Super Premium (RM21)</option>
+            </select>
+            <label for="pahang-tanggungan">Bilangan Tanggungan:</label>
+            <input type="number" id="pahang-tanggungan" min="0" value="0">
+            <button onclick="calculateZakat('pahang')">Kira</button>
+            <p id="pahang-result"></p>
+          </div>
 
-          <div class="col-lg-14" data-aos="fade-up" data-aos-delay="200">
-
-            <div class="faq-container">
-              <div class="faq-item">
-                <h3><span class="num"></span> <span>Negeri Terengganu</span></h3>
-                <div class="faq-content">
-                  <p>Zakat adalah salah satu daripada lima Rukun Islam yang wajib ditunaikan oleh umat Islam yang memenuhi syarat. Ia bertujuan untuk membersihkan harta, membantu golongan yang memerlukan, dan memastikan keseimbangan sosial dalam masyarakat.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item">
-                <h3><span class="num"></span> <span>Negeri Kelantan</span></h3>
-                <div class="faq-content">
-                  <p>Zakat wajib ke atas umat Islam yang memiliki harta atau pendapatan yang cukup nisab dan haul (tempoh setahun) serta memenuhi syarat-syarat yang ditetapkan oleh syarak.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item">
-                <h3><span class="num"></span> <span>Negeri Pahang</span></h3>
-                <div class="faq-content">
-                  <p>Jenis zakat termasuk Zakat Fitrah, Zakat Pendapatan, Zakat Perniagaan, Zakat Simpanan, Zakat KWSP, Zakat Emas dan Perak, serta Zakat Pertanian dan Ternakan.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-            </div>
-
+          <!-- Terengganu -->
+          <button class="collapsible">Terengganu</button>
+          <div class="content">
+            <label for="terengganu-kadar">Kadar Zakat Fitrah:</label>
+            <select id="terengganu-kadar">
+              <option value="10">Beras Biasa (RM10)</option>
+              <option value="22">Beras Premium (RM22)</option>
+            </select>
+            <label for="terengganu-tanggungan">Bilangan Tanggungan:</label>
+            <input type="number" id="terengganu-tanggungan" min="0" value="0">
+            <button onclick="calculateZakat('terengganu')">Kira</button>
+            <p id="terengganu-result"></p>
           </div>
         </div>
-
       </div>
-
     </section>
-    <section id="portfolio-details" class="portfolio-details section">
 
-      <div class="container" data-aos="fade-up">
-
-        <div class="row justify-content-between gy-4 mt-4">
-
-          <div class="col-lg-8" data-aos="fade-up">
-            <div class="portfolio-description">
-              <h2>This is an example of portfolio details</h2>
-              <p>
-                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
-              </p>
-              <p>
-                Amet consequatur qui dolore veniam voluptatem voluptatem sit. Non aspernatur atque natus ut cum nam et. Praesentium error dolores rerum minus sequi quia veritatis eum. Eos et doloribus doloremque nesciunt molestiae laboriosam.
-              </p>
-
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <div>
-                  <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                  <h3>Sara Wilsson</h3>
-                  <h4>Designer</h4>
-                </div>
-              </div>
-
-              <p>
-                Impedit ipsum quae et aliquid doloribus et voluptatem quasi. Perspiciatis occaecati earum et magnam animi. Quibusdam non qui ea vitae suscipit vitae sunt. Repudiandae incidunt cumque minus deserunt assumenda tempore. Delectus voluptas necessitatibus est.
-              </p>
-
-              <p>
-                Sunt voluptatum sapiente facilis quo odio aut ipsum repellat debitis. Molestiae et autem libero. Explicabo et quod necessitatibus similique quis dolor eum. Numquam eaque praesentium rem et qui nesciunt.
-              </p>
-
-            </div>
-          </div>
-
-          <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
-            <div class="portfolio-info">
-              <h3>Project information</h3>
-              <ul>
-                <li><strong>Category</strong> Web design</li>
-                <li><strong>Client</strong> ASU Company</li>
-                <li><strong>Project date</strong> 01 March, 2020</li>
-                <li><strong>Project URL</strong> <a href="#">www.example.com</a></li>
-                <li><a href="#" class="btn-visit align-self-start">Visit Website</a></li>
-              </ul>
-            </div>
-          </div>
-
+    <section id="zakat-pendapatan" class="pendapatan-calculator-section">
+      <div class="container">
+        <div class="calculator-header">
+          <button class="collapsible-pendapatan-section">Zakat Pendapatan</button>
         </div>
-
+        <div class="pendapatan-collapsible-content">
+          <!-- Kelantan -->
+          <button class="collapsible-pendapatan">Kelantan</button>
+          <div class="pendapatan-content">
+            <label for="kelantan-pendapatan1">Jumlah Gaji Setahun:</label>
+            <input type="number" id="kelantan-pendapatan1" min="0" value="0">
+            
+            <label for="kelantan-pendapatan2">Bonus Tahunan:</label>
+            <input type="number" id="kelantan-pendapatan2" min="0" value="0">
+    
+            <label for="kelantan-pendapatan3">Pendapatan Lain:</label>
+            <input type="number" id="kelantan-pendapatan3" min="0" value="0">
+    
+            <label for="kelantan-perbelanjaan1">Perbelanjaan Diri Setahun:</label>
+            <input type="number" id="kelantan-perbelanjaan1" min="0" value="0">
+    
+            <label for="kelantan-perbelanjaan2">Nafkah Isteri Setahun:</label>
+            <input type="number" id="kelantan-perbelanjaan2" min="0" value="0">
+    
+            <label for="kelantan-perbelanjaan3">Bilangan Anak Sekolah Rendah/Menengah:</label>
+            <input type="number" id="kelantan-perbelanjaan3" min="0" value="0">
+    
+            <label for="kelantan-perbelanjaan4">Bilangan Anak Universiti/Kolej:</label>
+            <input type="number" id="kelantan-perbelanjaan4" min="0" value="0">
+    
+            <button onclick="calculatePendapatan('kelantan')">Kira</button>
+            <p id="kelantan-result-pendapatan"></p>
+          </div>
+        </div>
       </div>
-
-    </section><!-- /Portfolio Details Section -->
-
+    </section>
+    
+    <section id="zakat-kwsp" class="kwsp-calculator-section">
+      <div class="container">
+        <div class="calculator-header">
+          <button class="collapsible-kwsp-section">Zakat KWSP</button>
+        </div>
+        <div class="kwsp-collapsible-content">
+          <!-- Kelantan -->
+          <button class="collapsible-kwsp">Kelantan</button>
+          <div class="kwsp-content">
+            <label for="kelantan-kwsp">Jumlah KWSP Dikeluarkan (RM):</label>
+            <input type="number" id="kelantan-kwsp" min="0" value="0">
+            <button onclick="calculateKwsp('kelantan')">Kira</button>
+            <p id="kelantan-result-kwsp"></p>
+          </div>
+    
+          <!-- Pahang -->
+          <button class="collapsible-kwsp">Pahang</button>
+          <div class="kwsp-content">
+            <label for="pahang-kwsp">Jumlah KWSP Dikeluarkan (RM):</label>
+            <input type="number" id="pahang-kwsp" min="0" value="0">
+            <button onclick="calculateKwsp('pahang')">Kira</button>
+            <p id="pahang-result-kwsp"></p>
+          </div>
+    
+          <!-- Terengganu -->
+          <button class="collapsible-kwsp">Terengganu</button>
+          <div class="kwsp-content">
+            <label for="terengganu-kwsp">Jumlah KWSP Dikeluarkan (RM):</label>
+            <input type="number" id="terengganu-kwsp" min="0" value="0">
+            <button onclick="calculateKwsp('terengganu')">Kira</button>
+            <p id="terengganu-result-kwsp"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    
+    
   </main>
 
   <footer id="footer" class="footer accent-background">
@@ -212,59 +241,53 @@
       <div class="row gy-4">
         <div class="col-lg-5 col-md-12 footer-about">
           <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">Impact</span>
+            <span class="sitename">ZakatPlus+</span>
           </a>
-          <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+          <p>“Dan dirikanlah kamu akan sembahyang dan keluarkanlah zakat” <br>
+            [Surah al-Baqarah: 43]</p>
           <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
+            <a href="https://x.com/" class="twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.facebook.com/" class="facebook" target="_blank"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/" class="instagram" target="_blank"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.linkedin.com/" class="linkedin" target="_blank"><i class="bi bi-linkedin"></i></a>
           </div>
         </div>
 
         <div class="col-lg-2 col-6 footer-links">
-          <h4>Useful Links</h4>
+          <h4>Pautan Utama</h4>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
+            <li><a href="#hero" class="active">Utama<br></a></li>
+            <li><a href="#about">Mengenai Zakat</a></li>
+            <li><a href="calculator.html">Kira Zakat</a></li>
+            <li><a href="#contact">Hubungi Kami</a></li>
           </ul>
         </div>
 
         <div class="col-lg-2 col-6 footer-links">
-          <h4>Our Services</h4>
+          <h4>Jenis Zakat</h4>
           <ul>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
+            <li><a href="#services">Zakat Fitrah</a></li>
+            <li><a href="#portfolio">Zakat Pendapatan</a></li>
+            <li><a href="#team">Zakat KWSP</a></li>
           </ul>
         </div>
 
         <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-          <h4>Contact Us</h4>
-          <p>A108 Adam Street</p>
-          <p>New York, NY 535022</p>
-          <p>United States</p>
-          <p class="mt-4"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-          <p><strong>Email:</strong> <span>info@example.com</span></p>
+          <h4>Hubungi Kami</h4>
+          <p>Universiti Malaysia Terengganu</p>
+          <p>21300 Kuala Terengganu</p>
+          <p>Terengganu</p>
+          <p class="mt-4"><strong>Tel:</strong> <span>+60 19-944 3809</span></p>
+          <p><strong>Email:</strong> <span>S72574@ocean.umt.edu.my</span></p>
         </div>
 
       </div>
     </div>
 
     <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">Impact</strong> <span>All Rights Reserved</span></p>
+      <p>&copy; <span>Copyright</span> <strong class="px-1 sitename">Alkana</strong> <span>All Rights Reserved</span></p>
       <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        Designed by Group 10
       </div>
     </div>
 

@@ -1,0 +1,373 @@
+/* General Collapsible Styles */
+.collapsible {
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    border-radius: 5px;
+    outline: none;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .collapsible:hover {
+    background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  }
+  
+  .collapsible.active {
+    background-color: color-mix(in srgb, var(--accent-color), transparent 40%);
+  }
+  
+  /* Collapsible Section Header */
+  .collapsible-section {
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+    border: none;
+    cursor: pointer;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+    border-radius: 5px;
+    outline: none;
+    width: 100%;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .collapsible-section:hover {
+    background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  }
+  
+  /* Active State for Collapsible Section */
+  .collapsible-section.active {
+    background-color: var(--contrast-color);
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+  }
+  
+  /* Collapsible Content */
+  .collapsible-content {
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .collapsible-content,
+  .content {
+    display: none;
+    border-radius: 5px;
+    background-color: var(--background-color);
+    padding: 15px 20px;
+    margin: 10px 0 20px;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .collapsible-content label {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+    color: #333;
+  }
+  
+  .collapsible-content select,
+  .collapsible-content input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 5px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .collapsible-content button {
+    padding: 10px 20px;
+    background: var(--accent-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .collapsible-content button:hover {
+    background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  }
+  
+  .collapsible-content p {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+    color: var(--accent-color);
+    background: rgba(0, 131, 116, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .collapsible-content.active,
+  .content.active {
+    display: block;
+  }
+  
+  /* Zakat Calculator Section */
+  .calculator-section {
+    padding: 40px 0;
+  }
+  
+  .calculator-container {
+    background: var(--surface-color);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .calculator-item h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--heading-color);
+  }
+  
+  /* General Collapsible Styles */
+button.collapsible-pendapatan-section {
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+    border: none;
+    cursor: pointer;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+    border-radius: 5px;
+    outline: none;
+    width: 100%;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  button.collapsible-pendapatan-section:hover {
+    background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  }
+  
+  button.collapsible-pendapatan-section.active {
+    background-color: var(--contrast-color);
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+  }
+  
+  /* Collapsible Content */
+  div.pendapatan-collapsible-content {
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif;
+    display: none;
+  }
+  
+  div.pendapatan-collapsible-content.active {
+    display: block;
+  }
+  
+  /* Inner Collapsible Styles */
+  button.collapsible-pendapatan {
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    border-radius: 5px;
+    outline: none;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+  }
+  
+  button.collapsible-pendapatan:hover {
+    background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  }
+  
+  button.collapsible-pendapatan.active {
+    background-color: color-mix(in srgb, var(--accent-color), transparent 40%);
+  }
+  
+  /* Inner Content */
+  div.pendapatan-content {
+    padding: 15px 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    margin: 10px 0 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  div.pendapatan-content label {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+    display: block;
+    color: #333;
+  }
+  
+  div.pendapatan-content input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 5px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  div.pendapatan-content button {
+    padding: 10px 20px;
+    background: var(--accent-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  div.pendapatan-content button:hover {
+    background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  }
+  
+  div.pendapatan-content p {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+    color: var(--accent-color);
+    background: rgba(0, 131, 116, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+/* Zakat KWSP Section Styles */
+button.collapsible-kwsp-section {
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+    border: none;
+    cursor: pointer;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+    border-radius: 5px;
+    outline: none;
+    width: 100%;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  button.collapsible-kwsp-section:hover {
+    background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  }
+  
+  button.collapsible-kwsp-section.active {
+    background-color: var(--contrast-color);
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+  }
+  
+  /* Inner Collapsible Styles for States */
+  button.collapsible-kwsp {
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    border-radius: 5px;
+    outline: none;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+  }
+  
+  button.collapsible-kwsp:hover {
+    background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  }
+  
+  button.collapsible-kwsp.active {
+    background-color: color-mix(in srgb, var(--accent-color), transparent 40%);
+  }
+  
+  /* KWSP Content Section */
+  .kwsp-collapsible-content {
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif;
+    display: none;
+  }
+  
+  .kwsp-collapsible-content.active {
+    display: block;
+  }
+  
+  .kwsp-content {
+    margin: 10px 0;
+    padding: 15px 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .kwsp-content label {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+    color: #333;
+    display: block;
+  }
+  
+  .kwsp-content input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 5px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .kwsp-content button {
+    padding: 10px 20px;
+    background: var(--accent-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .kwsp-content button:hover {
+    background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  }
+  
+  .kwsp-content p {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+    color: var(--accent-color);
+    background: rgba(0, 131, 116, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
