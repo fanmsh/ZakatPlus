@@ -19,7 +19,7 @@
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
   --nav-color: #ffffff;  /* The default color of the main navmenu links */
-  --nav-hover-color: #008374; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-hover-color: #00cbb4; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #01433c; /* Used for navigation links of the dropdown items in the navigation menu. */
@@ -164,57 +164,6 @@ h6 {
   }
 }
 
-/* PHP Email Form Messages
-------------------------------*/
-.php-email-form .error-message {
-  display: none;
-  background: #df1529;
-  color: #ffffff;
-  text-align: left;
-  padding: 15px;
-  margin-bottom: 24px;
-  font-weight: 600;
-}
-
-.php-email-form .sent-message {
-  display: none;
-  color: #ffffff;
-  background: #059652;
-  text-align: center;
-  padding: 15px;
-  margin-bottom: 24px;
-  font-weight: 600;
-}
-
-.php-email-form .loading {
-  display: none;
-  background: var(--surface-color);
-  text-align: center;
-  padding: 15px;
-  margin-bottom: 24px;
-}
-
-.php-email-form .loading:before {
-  content: "";
-  display: inline-block;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  margin: 0 10px -6px 0;
-  border: 3px solid var(--accent-color);
-  border-top-color: var(--surface-color);
-  animation: php-email-form-loading 1s linear infinite;
-}
-
-@keyframes php-email-form-loading {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
 
 /*--------------------------------------------------------------
 # Global Header
@@ -819,6 +768,58 @@ h6 {
   color: color-mix(in srgb, var(--default-color), transparent 50%);
 }
 
+/* PHP Email Form Messages
+------------------------------*/
+.php-email-form .error-message {
+  display: none;
+  background: #df1529;
+  color: #ffffff;
+  text-align: left;
+  padding: 15px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.php-email-form .sent-message {
+  display: none;
+  color: #ffffff;
+  background: #059652;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.php-email-form .loading {
+  display: none;
+  background: var(--surface-color);
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 24px;
+}
+
+.php-email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid var(--accent-color);
+  border-top-color: var(--surface-color);
+  animation: php-email-form-loading 1s linear infinite;
+}
+
+@keyframes php-email-form-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 /*--------------------------------------------------------------
 # Global Sections
 --------------------------------------------------------------*/
@@ -826,7 +827,7 @@ section,
 .section {
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 60px 0;
+  padding: 40px 0;
   scroll-margin-top: 112px;
   overflow: clip;
 }
@@ -873,13 +874,14 @@ section,
   margin-bottom: 0;
 }
 
+
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
 .hero {
   width: 100%;
   position: relative;
-  padding: 140px 0 0 0;
+  padding: 100px 0 0 0;
 }
 
 .hero .container {
@@ -1008,7 +1010,7 @@ section,
 }
 
 .hero .icon-box .title {
-  font-weight: 500;
+  font-weight: 400;
   margin-bottom: 15px;
   font-size: 24px;
 }
@@ -1016,6 +1018,13 @@ section,
 .hero .icon-box .title a {
   color: rgba(0, 0, 0, 0.8);
   transition: 0.3s;
+}
+
+.hero .icon-box .value {
+  font-weight: 500;
+  margin-bottom: 15px;
+  font-size: 24px;
+  color: black;
 }
 
 .hero .icon-box .icon {
@@ -1035,6 +1044,22 @@ section,
 .hero .icon-box:hover .title a,
 .hero .icon-box:hover .icon {
   color: var(--contrast-color);
+}
+
+.flag-logo {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flag-logo img {
+  max-width: 200px; 
+  height: auto;
+  display: block;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
 
 /*--------------------------------------------------------------
@@ -1085,10 +1110,13 @@ section,
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column; /* Ensure icon and text are stacked vertically */
+  padding: 10px; /* Add padding for spacing */
 }
 
 .clients .swiper-slide span {
-  white-space: nowrap; 
+  white-space: nowrap;
+  text-align: center; /* Center align the text */
 }
 
 .clients .swiper {
@@ -1100,7 +1128,7 @@ section,
 }
 
 .clients .swiper-slide img {
-  margin-right: 10px;
+  margin-bottom: 10px; /* Add margin below the icon for spacing */
   transition: 0.3s;
 }
 
@@ -1119,6 +1147,17 @@ section,
 .swiper-slide a:hover {
   text-decoration: underline; 
 }
+
+@media (max-width: 768px) {
+  .clients .swiper-slide {
+    padding: 5px; /* Reduce padding on smaller screens */
+  }
+
+  .clients .swiper-slide img {
+    margin-bottom: 5px; /* Reduce margin on smaller screens */
+  }
+}
+
 /*--------------------------------------------------------------
 # Stats Section
 --------------------------------------------------------------*/
@@ -2940,3 +2979,5 @@ section,
     transform: rotate(360deg);
   }
 }
+
+
